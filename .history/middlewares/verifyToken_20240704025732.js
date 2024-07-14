@@ -1,0 +1,10 @@
+import jwt from 'jsonwebtoken'
+
+export const verifyToken=async (req , res , next)=>{
+    let {token} = req.headers
+    jwt.verify(token , "secretkeymysecretkey" ,async (err , decoded)=>{
+        if(err) return res.status(401).json({message:'invalid token'})
+        req.user= decoded; //to add user in request to can return notes of logged in user only
+       next()
+    })
+}
