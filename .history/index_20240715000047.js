@@ -5,7 +5,6 @@ import { appError } from './utilities/appError.js'
 import companyRouter from './modules/companys/company.routes.js'
 import { dbConnection } from './dbConnections/dbConnection.js'
 import JobRouter from './modules/Jobs/job.routes.js'
-import cors from 'cors'
 const app = express()
 const port = 3000
 
